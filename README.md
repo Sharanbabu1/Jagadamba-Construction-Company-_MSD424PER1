@@ -42,7 +42,7 @@ Follow the steps below to set up the project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/Jagadamba_Construction_Company.git
+    git@github.com:Sharanbabu1/Jagadamba-Construction-Company-_MSD424PER1.git
     ```
    
 2. **Navigate to the project directory**:
