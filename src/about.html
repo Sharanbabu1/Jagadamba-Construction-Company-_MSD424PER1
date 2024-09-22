@@ -9,53 +9,67 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5c79c;
+            color: #f5c79c;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
+            background: #D1E8E2;
+            color: #2c3531;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
         nav ul li a {
-            color: #ffffff;
+            color: #2c3531;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        h2, h3 {
-            text-align: center;
-            color: #35424a;
+        nav ul li a:hover {
+            color: #f5c79c;
         }
-        section {
-            padding: 20px;
+        h2 {
+            color: #2c3531;
             text-align: center;
+            font-size: 2.8em;
+            margin-top: 20px;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto; /* Added bottom margin to separate from footer */
+            background: #ececec;
+            color: #2c3531;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .about-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
         footer {
-            background: #35424a;
-            color: #ffffff;
+            background:  #D1E8E2;
+            color: #2c3531;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        img {
-            width: 100%;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 15px 0;
+            font-size: 0.9em;
+            border-top: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>About Jagadamba Construction</h1>
+        <h1>About Us</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -68,15 +82,20 @@
     </header>
     <main>
         <section>
-            <h2>Our Mission</h2>
-            <p>To provide high-quality construction services that exceed our clients' expectations.</p>
-            <h2>Our Vision</h2>
-            <p>To be a leader in the construction industry, recognized for our innovation and quality.</p>
-            <h2>Our Team</h2>
-            <p>Our skilled team comprises experienced engineers, architects, and project managers dedicated to delivering outstanding results.</p>
-        </section>
-        <section>
-            <img src="" alt="Team" class="responsive-img">
+            <h2>Who We Are</h2>
+            <div class="about-content">
+                <p>
+                    Jagadamba Construction Company is a leading construction firm with a rich history of creating residential and commercial 
+                    spaces that last. Our commitment to quality, innovation, and customer satisfaction sets us apart in the construction industry.
+                </p>
+                <p>
+                    From designing to building, we take a holistic approach to every project, ensuring that each client receives 
+                    personalized attention and results that exceed expectations.
+                </p>
+                <p>
+                    Our mission is to build spaces that not only meet the highest standards but also create lasting value for our clients.
+                </p>
+            </div>
         </section>
     </main>
     <footer>
