@@ -9,47 +9,69 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5c79c;
+            color: #2c3531;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
+            background: #D1E8E2;
+            color: #2c3531;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
         nav ul li a {
-            color: #ffffff;
+            color: #2c3531;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        h2, h3 {
-            text-align: center;
-            color: #35424a;
+        nav ul li a:hover {
+            color: #f5c79c;
         }
-        section {
-            padding: 20px;
+        h2 {
+            color: #2c3531;
             text-align: center;
+            font-size: 2.8em;
+            margin-top: 20px;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            background: #ececec;
+            color: #2c3531;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .about-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-content ul li {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
         footer {
-            background: #35424a;
-            color: #ffffff;
+            background: #D1E8E2;
+            color: #2c3531;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        img {
-            width: 100%;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 15px 0;
+            font-size: 0.9em;
+            border-top: 1px solid #ccc;
         }
     </style>
 </head>
@@ -69,17 +91,16 @@
     <main>
         <section>
             <h2>What We Offer</h2>
-            <ul>
-                <li>Residential Construction</li>
-                <li>Commercial Projects</li>
-                <li>Renovation Services</li>
-                <li>Project Management</li>
-            </ul>
-            <h3>Quality and Safety</h3>
-            <p>We prioritize safety and quality in all our projects, ensuring compliance with industry standards.</p>
-        </section>
-        <section>
-            <img src="" alt="Services" class="responsive-img">
+            <div class="about-content">
+                <ul>
+                    <li>Residential Construction</li>
+                    <li>Commercial Projects</li>
+                    <li>Renovation Services</li>
+                    <li>Project Management</li>
+                </ul>
+                <h3>Quality and Safety</h3>
+                <p>We prioritize safety and quality in all our projects, ensuring compliance with industry standards.</p>
+            </div>
         </section>
     </main>
     <footer>
