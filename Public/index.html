@@ -18,7 +18,7 @@
         }
 
         header {
-    background: linear-gradient(to right, #ffcc00, #ff9900); /* Yellow to Orange gradient */
+    background: linear-gradient(to right, #ffcc00, #116466); /* Yellow to Orange gradient */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
@@ -44,7 +44,6 @@
         nav ul li {
             margin: 0 20px;
         }
-
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
@@ -53,26 +52,47 @@
         }
 
         nav ul li a:hover {
-            color: #ffcc00; /* Yellow on hover */
+            color: #ad8c089f; /* Yellow on hover */
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
+     
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    scroll-margin-right: auto; /* This moves the search bar to the right */
+}
+
+.input-container input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.magnifier {
+    margin-left: 8px;
+    color: #ffcc00;
+    cursor: pointer;
+}
+
 
         h2 {
             margin: 20px 0;
-            color: #28a745; /* Light green heading */
+            color: #01010c97; /* Light green heading */
+            text-align: center;
         }
 
         .welcome-message {
             font-size: 2rem; /* Increased font size */
-            color: #dc3545; /* Red color for emphasis */
+            color: #1e0507; 
             text-align: center;
             margin: 40px 0;
         }
@@ -97,9 +117,9 @@
             flex: 1 1 30%;
             margin: 10px;
             padding: 20px;
-            background: #f8f9fa; /* Light gray for cards */
+            background: #d9b08c61; /* Light gray for cards */
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px #116466;
             transition: transform 0.2s; /* Smooth transition for hover effect */
         }
 
@@ -111,13 +131,13 @@
             text-align: center;
             margin: 20px 0;
             padding: 10px;
-            background-color: #343a40; /* Dark gray */
+            background: linear-gradient(to right, #ffcc00, #116466);
             color: #ffffff;
         }
 
         .call-to-action {
-            background-color: #28a745; /* Bootstrap green */
-            color: #ffffff;
+            background-color: #ffcc00, #116466;
+            color: #020507;
             padding: 20px;
             text-align: center;
             margin: 20px 0;
@@ -125,14 +145,14 @@
         }
 
         .call-to-action h2 {
-            color: #dc3545; /* Dark red */
+            color: #020507;
             font-weight: bold; /* Bold text */
             font-size: 2rem; /* Larger font size */
         }
 
         .testimonial p {
             font-style: italic; /* Italic text for testimonials */
-            color: #6c757d; /* Gray color for text */
+            color: #040c13; /* Gray color for text */
         }
 
         ul {
@@ -156,11 +176,13 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <form class="input-container">
-                    <input type="text" class="input" placeholder="Search..."/>
-                    <i class="fa-solid fa-magnifying-glass magnifier"></i>
-                </form>
+                           
             </ul>
+            <form class="input-container">
+                <input type="text" class="input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass magnifier"></i>
+            </form>
+
         </nav>
     </header>
     
@@ -251,7 +273,7 @@
         <section class="call-to-action">
             <h2>Ready to Build Your Dream?</h2>
             <p>Contact us today for a free consultation and estimate!</p>
-            <a href="contact.html" style="color: #ffffff; font-weight: bold; text-decoration: underline;">Get Started</a>
+            <a href="contact.html" style="color: #116466; font-weight: bold; text-decoration: underline;">Get Started</a>
         </section>
     </main>
     <footer>
