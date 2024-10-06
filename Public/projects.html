@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Jagadamba Construction Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: lightgreen; /* Updated background color */
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #2b2e33;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            background-color: #1f1f1f;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .project-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #35424a;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2b2e33;
+        }
+
+        footer {
+            background-color: #35424a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jagadamba Construction Company - Our Projects</h1>
+    </header>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="project-list">
+        <div class="project-item">
+            <h2>Residential Complex - Downtown</h2>
+            <img src="project2.jpg" alt="Residential Complex">
+            <a href="residential-complex-detail.html" class="btn">View Details</a>
+        </div>
+        <div class="project-item">
+            <h2>Office Building - Central Business District</h2>
+            <img src="construction3.jpg" alt="Office Building">
+            <a href="office-building-detail.html" class="btn">View Details</a>
+        </div>
+        <div class="project-item">
+            <h2>School Renovation - Community High School</h2>
+            <img src="project3.jpg" alt="School Renovation">
+            <a href="school-renovation-detail.html" class="btn">View Details</a>
+        </div>
+        <div class="project-item">
+            <h2>Luxury Apartments - Waterfront</h2>
+            <img src="construction2.png" alt="Luxury Apartments">
+            <a href="luxury-apartments-detail.html" class="btn">View Details</a>
+        </div>
+        <div class="project-item">
+            <h2>Community Center - Urban Area</h2>
+            <img src="construction5.jpg" alt="Community Center">
+            <a href="community-center-detail.html" class="btn">View Details</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jagadamba Construction Company</p>
+    </footer>
+
+</body>
+</html>
