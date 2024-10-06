@@ -1,114 +1,172 @@
-const userCardTemplate = document.querySelector("[data-user-template]");
-const userCardContainer = document.querySelector("[data-user-cards-container]");
-const searchInput = document.querySelector("[data-search]");
-
-// Fetch users and create user cards
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(user => {
-            const card = userCardTemplate.content.cloneNode(true).children[0];
-            const header = card.querySelector("[data-header]");
-            const body = card.querySelector("[data-body]");
-            header.textContent = user.name;
-            body.textContent = user.email;
-            userCardContainer.append(card);
-        });
-    });
-
-// Handle search button click
-const magnifier = document.querySelector('.magnifier');
-magnifier.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent default button behavior
-    const query = searchInput.value.trim(); // Get the search input value
-
-    // Redirect to try.html with the search query
-    if (query) {
-        window.location.href = `try.html?query=${encodeURIComponent(query)}`; // Navigate to try.html with query
-    }
-});
-
-// Search functionality
-searchInput.addEventListener("input", (e) => {
-    const value = e.target.value.toLowerCase();
-    const cards = userCardContainer.children;
-
-    Array.from(cards).forEach(card => {
-        const header = card.querySelector("[data-header]").textContent.toLowerCase();
-        const body = card.querySelector("[data-body]").textContent.toLowerCase();
-        if (header.includes(value) || body.includes(value)) {
-            card.style.display = ""; // Show card
-        } else {
-            card.style.display = "none"; // Hide card
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Home - Jagadamba Construction Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-    });
-});
 
-// Define the API endpoint
-const apiUrl = 'https://jsonplaceholder.typicode.com/users';
-
-// Fetch user data from the API when navigating to try.html
-const params = new URLSearchParams(window.location.search);
-const searchQuery = params.get('query');
-
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(users => {
-        const filteredUsers = users.filter(user =>
-            user.name.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        const resultsContainer = document.getElementById('results-container');
-
-        if (filteredUsers.length > 0) {
-            filteredUsers.forEach(user => {
-                const userDiv = document.createElement('div');
-                userDiv.classList.add('user-card');
-                userDiv.textContent = `${user.name} - ${user.email} - ${user.username} - ${user.id}`;
-                resultsContainer.appendChild(userDiv);
-            });
-        } else {
-            resultsContainer.textContent = 'No users found.';
+        body {
+            background-color: #d4edda; /* Light green background */
+            color: #343a40; /* Darker text for contrast */
         }
-    })
-    .catch(error => {
-        console.error('Error fetching user data:', error);
-        const resultsContainer = document.getElementById('results-container');
-        resultsContainer.textContent = 'Error fetching user data.';
-    });
 
-// Contact form submission
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('form');
+        header {
+            background: linear-gradient(to right, #ffcc00, #116466); /* Yellow to Orange gradient */
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission
+        .input {
+            margin: 5px; /* Keep margin consistent */
+            width: 25%;
+            color: #011406;
+            border: none;
+            outline: none;
+            padding: 10px; /* Added padding for better appearance */
+        }
 
-            const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message'),
-            };
+        .input-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
 
-            // Send form data to the server
-            fetch('/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert(data); // Handle success
-                contactForm.reset(); // Reset the form
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error sending your message. Please try again.');
-            });
-        });
-    }
-});
+        .magnifier {
+            cursor: pointer;
+            color: #343a40;
+            font-size: 1.2rem; /* Adjust font size for visibility */
+            border: none; /* Remove border for a cleaner look */
+            background: none; /* Remove background */
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem; /* Increased font size */
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ad8c089f; /* Yellow on hover */
+        }
+
+        .container {
+            max-width: 600px; /* Adjusted for better alignment */
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center; /* Centered text for better appeal */
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: linear-gradient(to right, #ffcc00, #116466);
+            color: #ffffff;
+        }
+
+        h2 {
+            margin: 20px 0;
+            color: #35424a;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch; /* Aligned elements */
+        }
+
+        label {
+            margin: 10px 0 5px;
+            text-align: left; /* Aligned labels to the left */
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #090202;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #096198b1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0c838a9d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jagadamba Construction Company</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <form class="input-container" action="try.html" method="GET">
+                <input type="text" class="input" name="query" placeholder="Search Users...">
+                <button type="submit" class="magnifier">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
+    </header>
+    <main class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Jagadamba Construction Company</p>
+    </footer>
+</body>
+</html>
