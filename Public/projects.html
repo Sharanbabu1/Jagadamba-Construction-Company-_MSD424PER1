@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - Jagadamba Construction Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Home - Jagadamba Construction Company</title>
     <style>
         * {
             margin: 0;
@@ -13,40 +14,75 @@
         }
 
         body {
-            background-color: lightgreen; /* Updated background color */
-            color: #333;
-            padding: 20px;
+            background-color: #d4edda; /* Light green background */
+            color: #343a40; /* Darker text for contrast */
         }
 
         header {
-            background-color: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
+    background: linear-gradient(to right, #ffcc00, #116466); /* Yellow to Orange gradient */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem; /* Increased font size */
         }
 
-        h1 {
-            margin-bottom: 20px;
+        nav {
+            margin-top: 10px;
         }
 
-        .nav {
+        nav ul {
+            list-style-type: none;
+            padding: 0;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
         }
 
-        .nav a {
-            margin: 0 15px;
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 15px;
-            background-color: #2b2e33;
-            border-radius: 5px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
-        .nav a:hover {
-            background-color: #1f1f1f;
+        nav ul li a:hover {
+            color: #ad8c089f; /* Yellow on hover */
         }
+
+     
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    scroll-margin-left: auto; /* This moves the search bar to the right */
+}
+
+.input-container input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.magnifier {
+    margin-left: 8px;
+    color: #00040aa6;
+    cursor: pointer;
+}
 
         .project-list {
             display: flex;
@@ -79,7 +115,7 @@
 
         .btn {
             display: inline-block;
-            background-color: #35424a;
+            background-color: #ffcc00c5;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -93,26 +129,34 @@
         }
 
         footer {
-            background-color: #35424a;
-            color: white;
-            padding: 20px 0;
             text-align: center;
-            margin-top: 40px;
+            margin: 20px 0;
+            padding: 10px;
+            background: linear-gradient(to right, #ffcc00, #116466);
+            color: #ffffff;
         }
+
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Jagadamba Construction Company - Our Projects</h1>
-    </header>
+        <h1>Jagadamba Construction Company</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                           
+            </ul>
+            <form class="input-container">
+                <input type="text" class="input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass magnifier"></i>
+            </form>
 
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-    </div>
+        </nav>
+    </header>
 
     <div class="project-list">
         <div class="project-item">
