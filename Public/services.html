@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Services - Jagadamba Construction Company</title>
     <style>
         * {
@@ -13,21 +14,24 @@
         }
 
         body {
-            background-color: #e9f5e6; /* Light green background */
-            color: #333;
+            background-color: #d4edda; /* Light green background */
+            color: #343a40; /* Darker text for contrast */
         }
 
         header {
-            background-color: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
+    background: linear-gradient(to right, #ffcc00, #116466); /* Yellow to Orange gradient */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem; /* Increased font size */
         }
 
-        h1 {
-            margin-bottom: 10px;
-            font-size: 36px;
-            font-weight: bold;
+        nav {
+            margin-top: 10px;
         }
 
         nav ul {
@@ -40,7 +44,6 @@
         nav ul li {
             margin: 0 20px;
         }
-
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
@@ -49,24 +52,43 @@
         }
 
         nav ul li a:hover {
-            color: #c0c0c0;
+            color: #ad8c089f; /* Yellow on hover */
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-        }
+     
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    scroll-margin-left: auto; /* This moves the search bar to the right */
+}
+
+.input-container input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.magnifier {
+    margin-left: 8px;
+    color: #00040aa6;
+    cursor: pointer;
+}
 
         /* Updated Title Styling */
         .page-title {
             text-align: center;
             font-size: 38px;
             font-weight: bold;
-            color: #ff8c00; /* Orange color for the heading */
+            color: #0010108c; /* Orange color for the heading */
             margin-bottom: 40px;
             text-transform: uppercase;
             border-bottom: 3px solid #ffcc00; /* Yellow border for contrast */
@@ -106,12 +128,13 @@
             color: #555;
         }
 
+        
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #35424a;
-            color: white;
-            margin-top: 40px;
+            margin: 20px 0;
+            padding: 10px;
+            background: linear-gradient(to right, #ffcc00, #116466);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -126,6 +149,10 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <form class="input-container">
+                <input type="text" class="input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass magnifier"></i>
+            </form>
         </nav>
     </header>
 
