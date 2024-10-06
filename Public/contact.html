@@ -25,7 +25,29 @@
     text-align: center;
 }
 
+.input {
+    margin: 5px; /* Keep margin consistent */
+    margin-right: 0; /* Remove right margin to bring it closer to the magnifier */
+    width: 25%;
+    color: #d4edda;
+    border: none;
+    outline: none;
+    transition-delay: 0.5s;
+    padding: 10px; /* Added padding for better appearance */
+}
 
+.input-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.magnifier {
+    width: 20px; /* Fixed width for the icon */
+    margin-left: -10px; /* Bring it closer to the input field */
+    cursor: pointer;
+    color: #343a40;
+    font-size: 1.2rem; /* Adjust font size for visibility */
+}
         h1 {
             margin-bottom: 10px;
             font-size: 2.5rem; /* Increased font size */
@@ -184,7 +206,10 @@ nav {
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            
+            <form class="input-container"></form>
+                <input type="text" class="input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass magnifier"></i>
+            </form>
         </nav>
     </header>
     <main class="container">
