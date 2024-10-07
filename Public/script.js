@@ -111,4 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error(`Script load error for ${src}`));
+            document.body.appendChild(script);
+        });
+    }
+
+    // Load script.js dynamically after the document is ready
+    document.addEventListener('DOMContentLoaded', () => {
+        loadScript('script.js')
+            .then(() => {
+                console.log('Script loaded successfully');
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    });
 });
